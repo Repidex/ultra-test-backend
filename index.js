@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 var morgan = require('morgan')
+require('dotenv').config();
+
 const employeeRoutes = require("./src/routes/employee.route");
 
 const app = express();
@@ -11,7 +13,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 mongoose
-  .connect("mongodb+srv://jitenprmar7:X2QYZRftPjxUBO2T@cluster0.glfcf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
