@@ -11,8 +11,8 @@ router.get(
   // authorize(["admin", "manager"]),
   employeeController.getEmployees
 );
-router.post("/addUsers", employeeController.addEmployee); // Only admin
-router.put("/updateUser/:id", employeeController.updateEmployee); // Admin and manager
+router.post("/addUsers", employeeController.addEmployee); 
+router.put("/updateUser/:id", employeeController.updateEmployee); 
 router.delete("/deleteUser/:id", employeeController.deleteEmployee); // Only admin
 
 module.exports = router;
